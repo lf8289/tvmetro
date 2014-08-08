@@ -1,0 +1,320 @@
+﻿{
+    "layout_row": 2, 
+    "layout_col": 2, 
+    "canvas_Left": 40, 
+    "canvas_Top": 40, 
+    "cell_width": 150, 
+    "cell_height": 150,
+    "internal":5, 
+    "url_head":"assets://",
+    "menu": [
+        {
+            "name": "直播", 
+            "url": "",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "东方卫视", 
+                    "rowNum": 2, 
+                    "colNum": 2, 
+                    "name":"东方卫视",
+                    "bgPic": "02_03.png"
+                },
+                {
+                   "type": "adshow", 
+                    "url": "高清频道", 
+                    "rowNum": 1, 
+                    "colNum": 2, 
+                    "name":"高清频道",
+                    "bgPic": "00_05.png",
+                    describe:{                     	
+ 						ad_style:[{ 						
+							ad_pic:"ad01.jpg",
+							ad_link:"第一张图",
+							ad_showtime:5000							
+							},{							
+							ad_pic:"ad02.jpg",
+							ad_link:"第二张图",
+							ad_showtime:5000								
+							},{							
+							ad_pic:"ad03.jpg",
+							ad_link:"第三张图",
+							ad_showtime:5000									
+							},{							
+							ad_pic:"a_4(200x200).jpg",
+							ad_link:"第4张图",
+							ad_showtime:5000									
+							}
+						]						
+                   	   }
+                     
+                    
+                },
+                {
+                    "type": "img", 
+                    "url": "apk:\\com.ngb", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "name":"系统设置测试",
+                    "bgPic": "00_16.png"
+                } ,
+                {
+                    "type": "img", 
+                    "url": "节目指南", 
+                    "rowNum": 1, 
+                    "colNum": 2, 
+                    "name":"节目指南",
+                    "bgPic": "00_18.png"
+                } ,
+                {
+                    "type": "img", 
+                    "url": "apk:\\com.coship.dvb", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "name":"标清频道",
+                    "bgPic": "00_06.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "电视回看", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "name":"电视回看",
+                    "bgPic": "00_09.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "感恩节", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "name":"感恩节",
+                    "bgPic": "00_19.png"
+                },
+                {
+                    "type": "action", 
+                    "url": "http://www.baidu.com", 
+                    "rowNum": 1, 
+                    "colNum": 2, 
+                    "name":"同洲",
+                    "bgPic": "00_00.png",
+                    describe : {                     	
+						menu_name : "桌面",
+						action_style:{
+							left_pic:"i00004.png",
+							right_pic:"i00002.png",
+							type:1
+						}						
+                    }
+                    
+                }
+            ]
+        },
+        
+         {
+            "name": "点播", 
+            "url": "",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "点播", 
+                    "rowNum": 2, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_03.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "电视剧", 
+                    "rowNum": 1, 
+                    "colNum": 2, 
+                    "bgPic": "02-02_05.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "综艺", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_17.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "电影", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_19.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "动漫", 
+                    "rowNum": 2, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_12.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "纪实", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_07.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "体育", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_09.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "教育", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_20.png"
+                },
+                {
+                    "type": "img", 
+                    "url": "搜索", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "02-02_21.png"
+                }]
+          }
+          ,
+        
+         {
+            "name": "资讯", 
+            "url": "",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "阅读", 
+                    "rowNum": 2, 
+                    "colNum": 2, 
+                    "bgPic": "03-03_03.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "天气", 
+                    "rowNum": 1, 
+                    "colNum": 2, 
+                    "bgPic": "03-03_04.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "公告查询", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "03-03_06.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "湖北政务", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "03-03_07.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "环保", 
+                    "rowNum": 2, 
+                    "colNum": 1, 
+                    "bgPic": "03-03_05.png"
+                } ]
+          },
+        
+         {
+            "name": "支付", 
+            "url": "",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "灶具", 
+                    "rowNum": 2, 
+                    "colNum": 2, 
+                    "bgPic": "04-04_03.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "业务办理", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_05.jpg"
+                },
+                 {
+                    "type": "img", 
+                    "url": "便民缴费", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_12.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "家具银行", 
+                    "rowNum": 2, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_07.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "中国移动", 
+                    "rowNum": 2, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_09.png"
+                } ]
+          },
+           {
+            "name": "我的应用", 
+            "url": "app",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "灶具", 
+                    "rowNum": 2, 
+                    "colNum": 2, 
+                    "bgPic": "04-04_03.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "中国移动2", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_09.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "中国移动1", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_09.png"
+                }
+                ]
+          },
+           {
+            "name": "设置", 
+            "url": "",
+            "sub": [
+                {
+                    "type": "img", 
+                    "url": "灶具", 
+                    "rowNum": 2, 
+                    "colNum": 2, 
+                    "bgPic": "04-04_03.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "天气设置", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "bgPic": "04-04_09.png"
+                },
+                 {
+                    "type": "img", 
+                    "url": "天气设置", 
+                    "rowNum": 1, 
+                    "colNum": 1, 
+                    "name":"天气设置",
+                    "bgPic": "04-04_09.png"
+                }
+                ]
+          }
+    ]
+}
