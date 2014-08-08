@@ -110,11 +110,6 @@ public class HomePageHScrollView extends MetroScrollView {
         mMetroView.setGap(mGap);
         mMetroView.setVisibleItems(mVisiableRowCount, mVisiableColCount);
 
-        Log.d("LIF", "mLeftPadding = " + mLeftPadding);
-        Log.d("LIF", "mLeftPadding = " + mTopPadding);
-        Log.d("LIF", "mLeftPadding = " + mRightPadding);
-        Log.d("LIF", "mLeftPadding = " + mBottomPadding);
-
         mMetroView.setPadding(mLeftPadding, mTopPadding, mRightPadding,
                 mBottomPadding);
 

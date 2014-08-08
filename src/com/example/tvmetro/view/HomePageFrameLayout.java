@@ -28,6 +28,7 @@ public class HomePageFrameLayout extends FrameLayout implements
     private int mBorderHeight;
 
     private Rect mShaderRect = new Rect();
+    private View mCurFocusView;
 
     public HomePageFrameLayout(Context context) {
         this(context, null, 0);
@@ -45,6 +46,7 @@ public class HomePageFrameLayout extends FrameLayout implements
         mShaderView = new ImageView(mContext);
         mShaderView.setBackgroundResource(R.drawable.white_border);
         addView(mShaderView);
+        mShaderView.setVisibility(View.INVISIBLE);
 
         Drawable bd = context.getResources().getDrawable(
                 R.drawable.white_border);
@@ -112,17 +114,18 @@ public class HomePageFrameLayout extends FrameLayout implements
                     @Override
                     public void onAnimationUpdate(ValueAnimator animation) {
                         mBorderHeight = (Integer) animation.getAnimatedValue();
-                        Log.d("LIF", "mBorderHeight = " + mBorderHeight);
                         relayoutShaderBorder();
                     }
                 });
                 set.playTogether(wh);
             }
 
-            set.setDuration(250);
+            int duration = mCurFocusView == null ? 0 : 250;
+            set.setDuration(duration);
             set.addListener(mShaderAnimListener);
             set.start();
             mShaderView.invalidate();
+            mCurFocusView = view;
         }
     }
 
@@ -143,7 +146,7 @@ public class HomePageFrameLayout extends FrameLayout implements
 
         @Override
         public void onAnimationEnd(Animator arg0) {
-            mShaderView.bringToFront();
+//            mShaderView.bringToFront();
             mCurAnimatorSet = null;
         }
 

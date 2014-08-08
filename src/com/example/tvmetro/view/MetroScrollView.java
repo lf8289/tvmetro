@@ -37,6 +37,9 @@ public class MetroScrollView extends HorizontalScrollView {
 
         this.setWillNotDraw(true);
         this.setSmoothScrollingEnabled(true);
+        
+        this.setClipChildren(false);
+        this.setClipToPadding(false);
     }
 
     @Override

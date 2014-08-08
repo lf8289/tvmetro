@@ -121,11 +121,12 @@ public class HomePageCellView extends FrameLayout implements
     @Override
     public void onFocusChange(View view, boolean hasFocus) {
 
-        // Log.d("LIF", "view = " + view);
-        // Log.d("LIF", "focusable = " + hasFocus);
-
         if (mAnimatorSet != null) {
             mAnimatorSet.cancel();
+        }
+        
+        if (mFocusListener != null) {
+            mFocusListener.onFocusChange(this, hasFocus);
         }
 
         mAnimatorSet = new AnimatorSet();
@@ -166,9 +167,9 @@ public class HomePageCellView extends FrameLayout implements
         mAnimatorSet.start();
         // this.invalidate();
 
-        if (mFocusListener != null) {
-            mFocusListener.onFocusChange(this, hasFocus);
-        }
+//        if (mFocusListener != null) {
+//            mFocusListener.onFocusChange(this, hasFocus);
+//        }
     }
 
     public void setMetroItem(MetroItem item, MetroItemView view) {

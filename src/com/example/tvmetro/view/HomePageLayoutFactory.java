@@ -1,8 +1,6 @@
 package com.example.tvmetro.view;
 
-import java.util.HashMap;
-
-import com.example.tvmetro.R;
+import com.example.tvmetro.model.LayoutFactory;
 import com.example.tvmetro.model.PageGlobalData;
 import com.example.tvmetro.model.remote.Sub;
 import com.example.tvmetro.utils.ImageLoaderHelper;
@@ -19,46 +17,8 @@ public class HomePageLayoutFactory {
 
     private PageGlobalData mPageData;
     private LayoutInflater mLayoutInflater;
-    private HashMap<String, Integer> layoutMap = new HashMap<String, Integer>();
-
-    public enum BgTypeEnum {
-        IMG("img"), COLOR("color"), ACTION("action"), VIDEO("video"), APP("app"), ADSHOW(
-                "adshow");
-
-        public final String value;
-
-        private BgTypeEnum(String value) {
-            this.value = value;
-        }
-
-        public static BgTypeEnum fromValue(String value) {
-            for (BgTypeEnum style : BgTypeEnum.values()) {
-                if (value.equalsIgnoreCase(style.value)) {
-                    return style;
-                }
-            }
-            return null;
-        }
-    }
 
     private HomePageLayoutFactory(Context context) {
-        layoutMap.put("img",
-                Integer.valueOf(R.layout.layout_templet_h_large_rect));
-
-        layoutMap.put("action",
-                Integer.valueOf(R.layout.layout_templet_action_rect));
-
-        layoutMap.put("adshow",
-                Integer.valueOf(R.layout.layout_templet_h_largeadshow_rect));
-
-        // TODO: to add these layout
-        layoutMap.put("color",
-                Integer.valueOf(R.layout.layout_templet_h_large_rect));
-        layoutMap.put("video",
-                Integer.valueOf(R.layout.layout_templet_h_large_rect));
-        layoutMap.put("app",
-                Integer.valueOf(R.layout.layout_templet_h_large_rect));
-
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -83,13 +43,7 @@ public class HomePageLayoutFactory {
     }
 
     private int getLayoutFile(String type) {
-        int layout = -1;
-
-        if (layoutMap.containsKey(type)) {
-            layout = layoutMap.get(type);
-        }
-
-        return layout;
+        return LayoutFactory.getInstance().getLayout(type);
     }
 
     private void setupData(MetroItemView view, Sub sub) {
@@ -111,7 +65,7 @@ public class HomePageLayoutFactory {
     private void setBackground(MetroItemView view, Sub sub) {
         AsyncImageView image = view.getImage();
 
-        switch (BgTypeEnum.fromValue(sub.getType())) {
+        switch (LayoutFactory.BgTypeEnum.fromValue(sub.getType())) {
         case IMG:
             view.setName(sub.getName());
             image.loadImage(mPageData.getUrlHead() + sub.getBgPic(),
@@ -152,7 +106,6 @@ public class HomePageLayoutFactory {
                 FailReason failReason) {
         }
 
-        @SuppressWarnings("deprecation")
         @Override
         public void onLoadingComplete(String imageUri, View view,
                 Bitmap loadedImage) {

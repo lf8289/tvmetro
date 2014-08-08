@@ -32,7 +32,7 @@ public class ActionMetroItemView extends MetroItemView {
     public ActionMetroItemView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        ACT_OFFSET = DensityUtil.dip2px(context, 35);
+        ACT_OFFSET = DensityUtil.dip2px(context, 30);
     }
 
     @Override

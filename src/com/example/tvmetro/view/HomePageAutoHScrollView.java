@@ -11,9 +11,7 @@ import com.example.tvmetro.view.model.MetroItem;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Gravity;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View;
 
 public class HomePageAutoHScrollView extends MetroScrollView {
 
@@ -100,20 +98,34 @@ public class HomePageAutoHScrollView extends MetroScrollView {
             HomePageCellView iv = new HomePageCellView(mContext);
             MetroItem mi = new MetroItem(iv, 0, sub.getRowNum(), 0,
                     sub.getColNum());
-            iv.setMetroItem(mi, mHpFactory.getMetroItemView(sub));
-//            iv.setBackgroundColor(0XFFEE7600);
+            MetroItemView miv = mHpFactory.getMetroItemView(sub);
+            miv.setOnClickListener(mMivClickListener);
+            miv.setTag(sub);
+            iv.setMetroItem(mi, miv);
 
             mMetroView.addMetroItem(mi);
             iv.setOnFocusChangeListener(mPageLayout);
         }
     }
 
+    private OnClickListener mMivClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View arg0) {
+            if (arg0 instanceof MetroItemView) {
+                MetroItemView miv = (MetroItemView) arg0;
+                Sub sub = (Sub) miv.getTag();
+                Log.d("LIF", "sub.getName() = " + sub.getName());
+            }
+        }
+
+    };
+
     private void createMetroView() {
         if (mMetroView != null) {
             return;
         }
 
-        // mMetroView = new HomePageMetroView(mContext);
         mMetroView = new AutoMetroView(mContext);
 
         mMetroView.setOrientation(OrientationType.Horizontal);
@@ -124,14 +136,6 @@ public class HomePageAutoHScrollView extends MetroScrollView {
 
         mMetroView.setPadding(mLeftPadding, mTopPadding, mRightPadding,
                 mBottomPadding);
-
-        /*
-         * mMetroView.setPadding(DensityUtil.dip2px(mContext, 50),
-         * DensityUtil.dip2px(mContext, 50), DensityUtil.dip2px(mContext, 50),
-         * DensityUtil.dip2px(mContext, 50));
-         */
-
-        // addView(mMetroView);
 
         mPageLayout = new HomePageFrameLayout(mContext);
         mPageLayout.addView(mMetroView);
